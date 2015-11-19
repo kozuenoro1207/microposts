@@ -26,10 +26,22 @@ class UsersController < ApplicationController
     @user = current_user
     if @user.update_attributes(user_params)
       flash[:info] = "Your profile has been saved."
-      redirect_to user_url(@user)
+      redirect_to user_path(@user)
     else
       render :edit
     end
+  end
+  
+  def following
+    @user  = User.find(params[:id])
+    @following_users = @user.following_users
+    render 'show_following'
+  end
+  
+  def followers
+    @user = User.find(params[:id])
+    @follower_users = @user.follower_users
+    render 'show_followers'
   end
 
   private

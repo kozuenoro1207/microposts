@@ -1,0 +1,9 @@
+<li id="micropost-<%= following_user.id %>">
+  <section class="user_info">
+    <h1>
+      <%= gravatar_for following_user %>
+      <span class="following_user"><%= link_to following_user.name, following_user%></span>
+    </h1>
+  </section>
+</li>
+
