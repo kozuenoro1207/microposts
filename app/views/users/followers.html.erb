@@ -5,13 +5,16 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
+      <div class="num_info row">
+      <%= render partial: 'num_info' ,　locals: {user: @user} %>
+      </div>
     </section>
   </aside>
   <div class="col-md-8">
     <% if @follower_users.any? %>
       <h3>Follower (<%= @follower_users.count %>)</h3>
       <ol class="follower">
-        <%= render partial: 'relationships/follower_user', collection: @follower_users %>
+        <%= render partial: 'follower_user', collection: @follower_users %>
       </ol>
     <% end %>
   </div>

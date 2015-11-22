@@ -1,0 +1,15 @@
+<span class="col-md-4 num_link">
+      <span><%= link_to 'Microposts', user_path %></span>
+      <span class="Micro_num"><%= link_to @user.microposts.count, user_path %></span>
+</span>
+<span class="col-md-4 num_link">
+      <span><%= link_to 'Following', followings_user_path(@user) %></span>
+      <span class="folowing_num"><%= link_to @user.following_users.count, followings_user_path(@user) %></span>
+    
+</span>
+<span class="col-md-4 num_link">
+      <span><%= link_to 'Followers', followers_user_path(@user) %></span>
+      <span class="folowers_num"><%= link_to @user.follower_users.count, followers_user_path(@user) %></span>
+    
+    
+</span>
