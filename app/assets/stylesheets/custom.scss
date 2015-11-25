@@ -108,9 +108,6 @@ input {
 /* sidebar */
 
 aside {
-  section.user_info {
-    margin-top: 20px;
-  }
   section {
     padding: 10px 0;
     margin-top: 20px;
@@ -130,8 +127,29 @@ aside {
       margin-bottom: 3px;
       margin-top: 0px;
     }
-  }
-  
+    
+    .icon-name{
+      display:block;
+      padding-bottom:20%;
+    }
+    .user_info {
+    margin-top: 20px;
+   }
+   .area, .bio{
+      margin:5px;
+      #area-title, #bio-title{
+        background-color:#E0FFFF;
+        border-radius:10px;
+        padding:5px;
+      }
+      #area-contents, #bio-contents{
+        border-style: dotted;
+        border-width: 3px;
+        border-color: #DCDCDC;
+        border-radius:10px;
+        padding:5px;
+      }
+    }
   .num_info{
     margin-top:100px;
     text-align:left;
@@ -141,6 +159,9 @@ aside {
     text-align:center;
     display:inline-block;
   }
+}
+  
+
 }
 
 .gravatar {
@@ -174,16 +195,27 @@ aside {
       padding: 5px 0;
     }
   }
-  .timestamp {
-    color: $gray-light;
-    display: block;
-    margin-left: 60px;
+  .under-form{
+    display:block;
+    margin-top:20px;
+    
+    .fav-retweet{
+     display:block;
+     margin-top:20px;
+     margin-left:40px;
+    }
+    .timestamp {
+      color: $gray-light;
+      display:block;
+      margin-left: 60px;
+  }
   }
   .gravatar {
     float: left;
     margin-right: 10px;
     margin-top: 5px;
   }
+
 }
 
 aside {

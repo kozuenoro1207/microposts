@@ -2,10 +2,18 @@
   <aside class="col-md-4">
     <section  class="user_info">
       <div class="icon-name">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
+        <h1>
+          <%= gravatar_for @user %>
+          <%= @user.name %>
+        </h1>
+      </div>
+      <div class="area">
+        <div id="area-title">Area</div>
+        <div id="area-contents"><%= @user.area %></div>
+      </div>
+      <div class="bio">
+        <div id="bio-title">Bio</div>
+        <div id="bio-contents"><%= @user.bio %></div>
       </div>
       <div class="num_info row">
       <%= render partial: 'num_info' ,　locals: {user: @user} %>

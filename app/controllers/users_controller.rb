@@ -19,11 +19,17 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = current_user
+      @user = User.find(params[:id])
+      unless @user == current_user
+        redirect_to root_path
+      end
   end
 
   def update
-    @user = current_user
+    @user = User.find(params[:id])
+    unless @user == current_user
+      redirect_to root_path
+    end
     if @user.update_attributes(user_params)
       flash[:info] = "Your profile has been saved."
       redirect_to user_path(@user)
