@@ -1,11 +1,11 @@
 <div class="row">
   <aside class="col-md-4">
-    <section  class="user_info">
+    <section class="user_info">
       <div class="icon-name">
-        <h1>
-          <%= gravatar_for @user %>
-          <%= @user.name %>
-        </h1>
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
       </div>
       <%= render partial:"profile_text", locals:{user:@user} %>
       <div class="num_info row">
@@ -14,11 +14,10 @@
     </section>
   </aside>
   <div class="col-md-8">
-    <%= render 'follow_form' if logged_in? %>
-    <% if @user.microposts.any? %>
-      <h3>Microposts (<%= @user.microposts.count %>)</h3>
-      <ol class="microposts">
-        <%= render @microposts %>
+    <% if @favorite_microposts.any? %>
+      <h3>Favorite (<%= @favorite_microposts.count %>)</h3>
+      <ol class="favorite_microposts">
+        <%= render @favorite_microposts %>
       </ol>
     <% end %>
   </div>
